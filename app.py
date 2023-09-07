@@ -23,7 +23,7 @@ def get_information():
         # Format the current UTC time in ISO 8601 format
         utc_time = true_current_utc_time.strftime('%Y-%m-%dT%H:%M:%SZ')
 
-        github_file_url = 'https://github.com/DavidIfebueme/HNG-Backend-Tasks/blob/master/HNG_Stage1/app.py_mainfile_url'
+        github_file_url = 'https://github.com/DavidIfebueme/HNG-Backend-Tasks/blob/master/app.py'
         github_repo_url = 'https://github.com/DavidIfebueme/HNG-Backend-Tasks'
         status_code = 200  # for success
 
@@ -38,7 +38,7 @@ def get_information():
             ('status_code', status_code)
         ])
 
-        return Response(json.dumps(response_info, indent=4), content_type='application/json')
+        return Response(json.dumps(response_info, indent=4), content_type='application/json') # for some weird reason I just wanted it vertical :-)
 
     except Exception as e:
         response_data = {'error': str(e), 'status_code': 500}
